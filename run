@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# [mysql]
+echo "start mysql server..."
+exec /usr/bin/mysqld_safe &
+
+# [apache2]
+echo "start apache2..."
+source /etc/apache2/envvars && exec /usr/sbin/apache2 -D FOREGROUND
